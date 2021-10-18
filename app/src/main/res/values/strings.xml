@@ -9,10 +9,10 @@
     <string name="btnLabelFiveText">5</string>
     <string name="btnLabelSixText">6</string>
     <string name="btnLabelSevenText">7</string>
-    <string name="btnLabelEight">8</string>
+    <string name="btnLabelEightText">8</string>
     <string name="btnLabelNineText">9</string>
     <string name="btnLabelZeroText">0</string>
-    <string name="btnLabelClear">Clear</string>
+    <string name="btnLabelClearText">Clear</string>
     <string name="twentyDollarLabelText">$20:</string>
     <string name="twentyDollarQtyLabelText">0</string>
     <string name="tenDollarLabelText">$10:</string>
