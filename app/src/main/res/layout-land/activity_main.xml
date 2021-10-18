@@ -95,7 +95,7 @@
                 <Button
                     android:id="@+id/btnLabelEight"
                     style="@style/button"
-                    android:text="@string/btnLabelEight" />
+                    android:text="@string/btnLabelEightText" />
             </LinearLayout>
 
             <LinearLayout
@@ -114,11 +114,8 @@
                 <Button
                     android:id="@+id/btnLabelClear"
                     style="@style/buttonClear"
-                    android:text="@string/btnLabelClear" />
+                    android:text="@string/btnLabelClearText" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
