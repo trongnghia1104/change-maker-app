@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Change Maker</string>
     <string name="priceLabelText">Price:</string>
-    <string name="currentAmountLabelText">2.34</string>
+    <string name="currentAmountLabelText">0.00</string>
+
     <string name="btnLabelOneText">1</string>
     <string name="btnLabelTwoText">2</string>
     <string name="btnLabelThreeText">3</string>
@@ -13,6 +14,7 @@
     <string name="btnLabelNineText">9</string>
     <string name="btnLabelZeroText">0</string>
     <string name="btnLabelClearText">Clear</string>
+
     <string name="twentyDollarLabelText">$20:</string>
     <string name="twentyDollarQtyLabelText">0</string>
     <string name="tenDollarLabelText">$10:</string>
@@ -22,11 +24,11 @@
     <string name="oneDollarLabelText">$1:</string>
     <string name="oneDollarQtyLabelText">2</string>
     <string name="twentyFiveCentLabelText">25¢:</string>
-    <string name="twentyFiveCentQtyLabelText">1</string>
+    <string name="twentyFiveCentQtyLabelText">0</string>
     <string name="tenCentLabelText">10¢:</string>
     <string name="tenCentQtyLabelText">0</string>
     <string name="fiveCentLabelText">5¢:</string>
-    <string name="fiveCentQtyLabelText">1</string>
+    <string name="fiveCentQtyLabelText">0</string>
     <string name="oneCentLabelText">1¢:</string>
-    <string name="oneCentQtyLabelText">4</string>
+    <string name="oneCentQtyLabelText">0</string>
 </resources>
