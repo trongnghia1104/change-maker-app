@@ -13,4 +13,20 @@
     <string name="btnLabelNineText">9</string>
     <string name="btnLabelZeroText">0</string>
     <string name="btnLabelClear">Clear</string>
+    <string name="twentyDollarLabelText">$20:</string>
+    <string name="twentyDollarQtyLabelText">0</string>
+    <string name="tenDollarLabelText">$10:</string>
+    <string name="tenDollarQtyLabelText">0</string>
+    <string name="fiveDollarLabelText">$5:</string>
+    <string name="fiveDollarQtyLabelText">0</string>
+    <string name="oneDollarLabelText">$1:</string>
+    <string name="oneDollarQtyLabelText">2</string>
+    <string name="twentyFiveCentLabelText">25¢:</string>
+    <string name="twentyFiveCentQtyLabelText">1</string>
+    <string name="tenCentLabelText">10¢:</string>
+    <string name="tenCentQtyLabelText">0</string>
+    <string name="fiveCentLabelText">5¢:</string>
+    <string name="fiveCentQtyLabelText">1</string>
+    <string name="oneCentLabelText">1¢:</string>
+    <string name="oneCentQtyLabelText">4</string>
 </resources>

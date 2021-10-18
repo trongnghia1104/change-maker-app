@@ -31,37 +31,128 @@
         android:orientation="horizontal"
         android:weightSum="3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:baselineAligned="false">
 
-        <LinearLayout
-            android:layout_weight="2"
-            android:orientation="vertical"
-            android:layout_marginStart="35dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="2">
 
-            <LinearLayout
-                style="@style/billRow">
-                <TextView
-                    style="@style/bill1"
-                    android:text="$20:"/>
+            <TextView
+                android:id="@+id/twentyDollarLabel"
+                style="@style/billCol1"
+                android:layout_marginTop="0dp"
+                android:text="@string/twentyDollarLabelText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    style="@style/bill2"
-                    android:text="0"/>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/twentyDollarQtyLabel"
+                style="@style/billCol2"
+                android:layout_marginTop="0dp"
+                android:text="@string/twentyDollarQtyLabelText"
+                app:layout_constraintStart_toEndOf="@+id/twentyDollarLabel"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                style="@style/billRow">
-                <TextView
-                    style="@style/bill1"
-                    android:text="$10:"/>
+            <TextView
+                android:id="@+id/tenDollarLabel"
+                style="@style/billCol1"
+                android:text="@string/tenDollarLabelText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/twentyDollarLabel" />
 
-                <TextView
-                    style="@style/bill2"
-                    android:text="0"/>
-            </LinearLayout>
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tenDollarQtyLabel"
+                style="@style/billCol2"
+                android:text="@string/tenDollarQtyLabelText"
+                app:layout_constraintStart_toEndOf="@+id/tenDollarLabel"
+                app:layout_constraintTop_toBottomOf="@+id/twentyDollarQtyLabel" />
+
+            <TextView
+                android:id="@+id/fiveDollarLabel"
+                style="@style/billCol1"
+                android:text="@string/fiveDollarLabelText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tenDollarLabel" />
+
+            <TextView
+                android:id="@+id/fiveDollarQtyLabel"
+                style="@style/billCol2"
+                android:text="@string/fiveDollarQtyLabelText"
+                app:layout_constraintStart_toEndOf="@+id/fiveDollarLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tenDollarQtyLabel" />
+
+            <TextView
+                android:id="@+id/oneDollarLabel"
+                style="@style/billCol1"
+                android:text="@string/oneDollarLabelText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fiveDollarLabel" />
+
+            <TextView
+                android:id="@+id/oneDollarQtyLabel"
+                style="@style/billCol2"
+                android:text="@string/oneDollarQtyLabelText"
+                app:layout_constraintStart_toEndOf="@+id/oneDollarLabel"
+                app:layout_constraintTop_toBottomOf="@+id/fiveDollarQtyLabel" />
+
+            <TextView
+                android:id="@+id/twentyFiveCentLabel"
+                style="@style/billCol1"
+                android:text="@string/twentyFiveCentLabelText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/oneDollarLabel" />
+
+            <TextView
+                android:id="@+id/twentyFiveCentQtyLabel"
+                style="@style/billCol2"
+                android:text="@string/twentyFiveCentQtyLabelText"
+                app:layout_constraintStart_toEndOf="@+id/twentyFiveCentLabel"
+                app:layout_constraintTop_toBottomOf="@+id/oneDollarQtyLabel" />
+
+            <TextView
+                android:id="@+id/tenCentLabel"
+                style="@style/billCol1"
+                android:text="@string/tenCentLabelText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/twentyFiveCentLabel" />
+
+            <TextView
+                android:id="@+id/tenCentQtyLabel"
+                style="@style/billCol2"
+                android:text="@string/tenCentQtyLabelText"
+                app:layout_constraintStart_toEndOf="@+id/tenCentLabel"
+                app:layout_constraintTop_toBottomOf="@+id/twentyFiveCentQtyLabel" />
+
+            <TextView
+                android:id="@+id/fiveCentLabel"
+                style="@style/billCol1"
+                android:text="@string/fiveCentLabelText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tenCentLabel" />
+
+            <TextView
+                android:id="@+id/fiveCentQtyLabel"
+                style="@style/billCol2"
+                android:text="@string/fiveCentQtyLabelText"
+                app:layout_constraintStart_toEndOf="@+id/fiveCentLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tenCentQtyLabel" />
+
+            <TextView
+                android:id="@+id/oneCentLabel"
+                style="@style/billCol1"
+                android:text="@string/oneCentLabelText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fiveCentLabel" />
+
+            <TextView
+                android:id="@+id/oneCentQtyLabel"
+                style="@style/billCol2"
+                android:text="@string/oneCentQtyLabelText"
+                app:layout_constraintStart_toEndOf="@+id/oneCentLabel"
+                app:layout_constraintTop_toBottomOf="@+id/fiveCentQtyLabel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -137,7 +228,4 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
