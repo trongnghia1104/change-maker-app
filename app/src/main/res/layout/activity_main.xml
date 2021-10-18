@@ -229,7 +229,8 @@
             <Button
                 android:id="@+id/btnLabelZero"
                 style="@style/button"
-                android:text="@string/btnLabelZeroText" />
+                android:text="@string/btnLabelZeroText"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/btnLabelClear"
