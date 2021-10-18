@@ -27,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priceLabel">
 
@@ -155,9 +156,8 @@
 
         <LinearLayout
             android:id="@+id/buttonRow1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            style="@style/buttonRow"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
@@ -178,9 +178,8 @@
 
         <LinearLayout
             android:id="@+id/buttonRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            style="@style/buttonRow"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonRow1">
 
             <Button
@@ -201,9 +200,8 @@
 
         <LinearLayout
             android:id="@+id/buttonRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            style="@style/buttonRow"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonRow2">
 
             <Button
@@ -224,9 +222,8 @@
 
         <LinearLayout
             android:id="@+id/buttonRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            style="@style/buttonRow"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonRow3">
 
             <Button
