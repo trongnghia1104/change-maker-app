@@ -7,27 +7,21 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/price_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/priceLabel"
+        style="@style/priceBarPortrait"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
-        android:text="Price:"
-        android:textSize="25sp"
+        android:text="@string/priceLabelText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/current_amount_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/currentAmountLabel"
+        style="@style/priceBarPortrait"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
-        android:text="2.34"
-        android:textSize="25sp"
+        android:text="@string/currentAmountLabelText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/price_label"
+        app:layout_constraintStart_toEndOf="@+id/priceLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
@@ -39,14 +33,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <LinearLayout
             android:layout_weight="2"
-            android:background="@color/purple_200"
-            android:text="Android"
-            android:textColor="#5E35B1"
-            android:textSize="20sp" />
+            android:orientation="vertical"
+            android:layout_marginStart="35dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                style="@style/billRow">
+                <TextView
+                    style="@style/bill1"
+                    android:text="$20:"/>
+
+                <TextView
+                    style="@style/bill2"
+                    android:text="0"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/billRow">
+                <TextView
+                    style="@style/bill1"
+                    android:text="$10:"/>
+
+                <TextView
+                    style="@style/bill2"
+                    android:text="0"/>
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,72 +69,71 @@
             android:layout_marginTop="35dp"
             android:layout_weight="1"
             android:orientation="vertical">
-
             <LinearLayout
                 style="@style/buttonRow">
                 <Button
-                    android:id="@+id/btn_label_1"
+                    android:id="@+id/btnLabelOne"
                     style="@style/button"
-                    android:text="1"/>
+                    android:text="@string/btnLabelOneText"/>
 
                 <Button
-                    android:id="@+id/btn_label_2"
+                    android:id="@+id/btnLabelTwo"
                     style="@style/button"
-                    android:text="2"/>
+                    android:text="@string/btnLabelTwoText"/>
 
                 <Button
-                    android:id="@+id/btn_label_3"
+                    android:id="@+id/btnLabelThree"
                     style="@style/button"
-                    android:text="3"/>
+                    android:text="@string/btnLabelThreeText"/>
             </LinearLayout>
 
             <LinearLayout
                 style="@style/buttonRow">
                 <Button
-                    android:id="@+id/btn_label_4"
+                    android:id="@+id/btnLabelFour"
                     style="@style/button"
-                    android:text="4"/>
+                    android:text="@string/btnLabelFourText"/>
 
                 <Button
-                    android:id="@+id/btn_label_5"
+                    android:id="@+id/btnLabelFive"
                     style="@style/button"
-                    android:text="5"/>
+                    android:text="@string/btnLabelFiveText"/>
 
                 <Button
-                    android:id="@+id/btn_label_6"
+                    android:id="@+id/btnLabelSix"
                     style="@style/button"
-                    android:text="6"/>
+                    android:text="@string/btnLabelSixText"/>
             </LinearLayout>
 
             <LinearLayout
                 style="@style/buttonRow">
                 <Button
-                    android:id="@+id/btn_label_7"
+                    android:id="@+id/btnLabelSeven"
                     style="@style/button"
-                    android:text="7"/>
+                    android:text="@string/btnLabelSevenText"/>
 
                 <Button
-                    android:id="@+id/btn_label_8"
+                    android:id="@+id/btnLabelEight"
                     style="@style/button"
-                    android:text="8"/>
+                    android:text="@string/btnLabelEight"/>
 
                 <Button
-                    android:id="@+id/btn_label_9"
+                    android:id="@+id/btnLabelNine"
                     style="@style/button"
-                    android:text="9"/>
+                    android:text="@string/btnLabelNineText"/>
             </LinearLayout>
 
             <LinearLayout
                 style="@style/buttonRow">
                 <Button
-                    android:id="@+id/btn_label_0"
+                    android:id="@+id/btnLabelZero"
                     style="@style/button"
-                    android:text="0"/>
+                    android:text="@string/btnLabelZeroText"/>
 
                 <Button
-                    android:id="@+id/btn_label_clear"
+                    android:id="@+id/btnLabelClear"
                     style="@style/buttonClear"
-                    android:text="Clear"/>
+                    android:text="@string/btnLabelClear"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
