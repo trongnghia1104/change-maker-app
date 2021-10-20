@@ -1,35 +1,46 @@
 <resources>
     <string name="app_name">Change Maker</string>
+
+    <!-- price label -->
     <string name="priceLabelText">Price:</string>
-    <string name="currentAmountLabelText">0.00</string>
 
-    <string name="btnLabelOneText">1</string>
-    <string name="btnLabelTwoText">2</string>
-    <string name="btnLabelThreeText">3</string>
-    <string name="btnLabelFourText">4</string>
-    <string name="btnLabelFiveText">5</string>
-    <string name="btnLabelSixText">6</string>
-    <string name="btnLabelSevenText">7</string>
-    <string name="btnLabelEightText">8</string>
-    <string name="btnLabelNineText">9</string>
-    <string name="btnLabelZeroText">0</string>
-    <string name="btnLabelClearText">Clear</string>
+    <!-- current amount -->
+    <string name="currAmountText">0.00</string>
 
-    <string name="twentyDollarLabelText">$20:</string>
-    <string name="twentyDollarQtyLabelText">0</string>
-    <string name="tenDollarLabelText">$10:</string>
-    <string name="tenDollarQtyLabelText">0</string>
-    <string name="fiveDollarLabelText">$5:</string>
-    <string name="fiveDollarQtyLabelText">0</string>
-    <string name="oneDollarLabelText">$1:</string>
-    <string name="oneDollarQtyLabelText">0</string>
+    <!-- numeric keypad label -->
+    <string name="btn1">1</string>
+    <string name="btn2">2</string>
+    <string name="btn3">3</string>
+    <string name="btn4">4</string>
+    <string name="btn5">5</string>
+    <string name="btn6">6</string>
+    <string name="btn7">7</string>
+    <string name="btn8">8</string>
+    <string name="btn9">9</string>
+    <string name="btn0">0</string>
+    <string name="btnClear">Clear</string>
 
-    <string name="twentyFiveCentLabelText">25¢:</string>
-    <string name="twentyFiveCentQtyLabelText">0</string>
-    <string name="tenCentLabelText">10¢:</string>
-    <string name="tenCentQtyLabelText">0</string>
-    <string name="fiveCentLabelText">5¢:</string>
-    <string name="fiveCentQtyLabelText">0</string>
-    <string name="oneCentLabelText">1¢:</string>
-    <string name="oneCentQtyLabelText">0</string>
+    <!-- dollar unit label -->
+    <string name="txt20dollars">$20:</string>
+    <string name="txt10dollars">$10:</string>
+    <string name="txt5dollars">$5:</string>
+    <string name="txt1dollar">$1:</string>
+
+    <!-- dollar unit quantity -->
+    <string name="qty20dollars">0</string>
+    <string name="qty10dollars">0</string>
+    <string name="qty5dollars">0</string>
+    <string name="qty1dollar">0</string>
+
+    <!-- cent unit label -->
+    <string name="txt25cents">25¢:</string>
+    <string name="txt10cents">10¢:</string>
+    <string name="txt5cents">5¢:</string>
+    <string name="txt1cent">1¢:</string>
+
+    <!-- cent unit quantity -->
+    <string name="qty25cents">0</string>
+    <string name="qty10cents">0</string>
+    <string name="qty5cents">0</string>
+    <string name="qty1cent">0</string>
 </resources>
