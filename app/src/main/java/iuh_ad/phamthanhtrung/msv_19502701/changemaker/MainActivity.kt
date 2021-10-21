@@ -1,5 +1,6 @@
 package iuh_ad.phamthanhtrung.msv_19502701.changemaker
 
+import android.icu.util.UniversalTimeScale.toBigDecimal
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +8,11 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.math.RoundingMode
 
 class MainActivity : AppCompatActivity() {
+    private val MAX_PRICES: Double = 20 * 9999.0
+    private val magicNumber: Int = 6
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,11 +25,13 @@ class MainActivity : AppCompatActivity() {
             qty5cents, qty1cent
         )
 
-        var newPrice: String = if (currAmount.text.toString() == "0.00") "" else currAmount.text.toString()
+        var newPrice: String = if (
+            currAmount.text.toString() == "0.00"
+        ) "" else currAmount.text.toString()
 
         /* function that return value of button, -1 if it is clear button */
-        fun getValue(tv: TextView): Int {
-            return when(tv.text.toString()) {
+        fun getValue(btn: TextView): Int {
+            return when(btn.text.toString()) {
                 "1" -> 1
                 "2" -> 2
                 "3" -> 3
@@ -46,21 +52,34 @@ class MainActivity : AppCompatActivity() {
 
             /* clear button is pressed */
             if (value == -1) {
-                newPrice =""
+                newPrice = ""
                 currAmount.text = "0.00"
+                prices.forEach { it -> it.text = "0" }
                 return
             }
 
-            /* current amount is too big */
-            if (newPrice.length > 8) {
-                Toast.makeText(this, getString(R.string.alertBigNum), Toast.LENGTH_SHORT).show()
-                return
-            }
 
             /* change current price */
             newPrice += value.toString()
             newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
+
+            var parsedNumber = newPrice.toDouble() / 100.0
+
+            /* current amount is too big */
+            if (parsedNumber > MAX_PRICES) {
+                Toast.makeText(this, getString(R.string.alertBigNum), Toast.LENGTH_SHORT).show()
+                return
+            }
+
+            currAmount.text = parsedNumber.toString()
+
+            val listPrices = arrayOf(20.0, 10.0, 5.0, 1.0, 0.25, 0.1, 0.05, 0.01)
+            for (i in listPrices.indices) {
+                var amounts = (parsedNumber / listPrices[i]).toInt()
+                prices[i].text = amounts.toString()
+                parsedNumber -= amounts.toDouble() * listPrices[i]
+                parsedNumber = parsedNumber.toBigDecimal().setScale(magicNumber, RoundingMode.UP).toDouble()
+            }
         }
 
         /* array of button */
@@ -75,9 +94,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
         var currPrice: TextView = currAmount
         outState.putString("currPrice", currPrice.text.toString())
-        super.onSaveInstanceState(outState)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
