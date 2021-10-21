@@ -43,4 +43,7 @@
     <string name="qty10cents">0</string>
     <string name="qty5cents">0</string>
     <string name="qty1cent">0</string>
+
+    <!-- string to warn when the user enters a number that is too large -->
+    <string name="alertBigNum">Cannot enter a larger number!</string>
 </resources>

@@ -2,99 +2,75 @@ package iuh_ad.phamthanhtrung.msv_19502701.changemaker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var prices = arrayOf(
+            qty20dollars, qty10dollars,
+            qty5dollars, qty1dollar,
+            qty25cents, qty10cents,
+            qty5cents, qty1cent
+        )
 
-
-        onClickKeypad()
-    }
-
-    private fun onClickKeypad() {
         var newPrice: String = if (currAmount.text.toString() == "0.00") "" else currAmount.text.toString()
 
-        btn1.setOnClickListener {
-            newPrice += "1"
+        /* function that return value of button, -1 if it is clear button */
+        fun getValue(tv: TextView): Int {
+            return when(tv.text.toString()) {
+                "1" -> 1
+                "2" -> 2
+                "3" -> 3
+                "4" -> 4
+                "5" -> 5
+                "6" -> 6
+                "7" -> 7
+                "8" -> 8
+                "9" -> 9
+                "0" -> 0
+                else -> -1
+            }
+        }
+
+        /* function that handles when a button is pressed */
+        fun onChange(btn: TextView) {
+            val value = getValue(btn)
+
+            /* clear button is pressed */
+            if (value == -1) {
+                newPrice =""
+                currAmount.text = "0.00"
+                return
+            }
+
+            /* current amount is too big */
+            if (newPrice.length > 8) {
+                Toast.makeText(this, getString(R.string.alertBigNum), Toast.LENGTH_SHORT).show()
+                return
+            }
+
+            /* change current price */
+            newPrice += value.toString()
             newPrice = newPrice.toInt().toString()
             currAmount.text = (newPrice.toDouble() / 100.0).toString()
         }
 
-        btn2.setOnClickListener {
-            newPrice += "2"
-            newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
-        }
-
-        btn3.setOnClickListener {
-            newPrice += "3"
-            newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
-        }
-
-        btn4.setOnClickListener {
-            newPrice += "4"
-            newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
-        }
-
-        btn5.setOnClickListener {
-            newPrice += "5"
-            newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
-        }
-
-        btn6.setOnClickListener {
-            newPrice += "6"
-            newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
-        }
-
-        btn7.setOnClickListener {
-            newPrice += "7"
-            newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
-        }
-
-        btn8.setOnClickListener {
-            newPrice += "8"
-            newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
-        }
-
-        btn9.setOnClickListener {
-            newPrice += "9"
-            newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
-        }
-
-        btn0.setOnClickListener {
-            newPrice += "0"
-            newPrice = newPrice.toInt().toString()
-            currAmount.text = (newPrice.toDouble() / 100.0).toString()
-        }
-
-        btnClear.setOnClickListener {
-            newPrice = ""
-            currAmount.text = "0.00"
-        }
-//        btn1.setOnClickListener {
-//            Toast.makeText(this, txtPrice, Toast.LENGTH_SHORT).show()
-//            currAmount.text = onChange(1, txtPrice)
-//        }
+        /* array of button */
+        arrayOf<TextView>(
+            btn1, btn2, btn3,
+            btn4, btn5, btn6,
+            btn7, btn8, btn9,
+            btn0, btnClear
+        ).forEach { it -> it.setOnClickListener() {
+            onChange(it as TextView)
+        }}
     }
-
-//    private fun onChange(num: Int, txtPrice: String): String {
-//        if (num == -1) {
-//            return "0.00"
-//        }
-//        var newPrice: String = txtPrice
-//        newPrice += num.toString()
-//        newPrice = newPrice.toInt().toString()
-//
-//        return (newPrice.toDouble() / 100.0).toString()
-//    }
 }
