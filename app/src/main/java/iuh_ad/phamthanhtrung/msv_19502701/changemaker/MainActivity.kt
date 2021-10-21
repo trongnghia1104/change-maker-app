@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         /* function that handles when a button is pressed */
-        fun onChange(btn: TextView) {
+        fun onButtonClicked(btn: TextView) {
             val value = getValue(btn)
 
             /* clear button is pressed */
@@ -70,7 +70,18 @@ class MainActivity : AppCompatActivity() {
             btn7, btn8, btn9,
             btn0, btnClear
         ).forEach { it -> it.setOnClickListener() {
-            onChange(it as TextView)
+            onButtonClicked(it as TextView)
         }}
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        var currPrice: TextView = currAmount
+        outState.putString("currPrice", currPrice.text.toString())
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        currAmount.text = savedInstanceState.getString("currPrice")
     }
 }
